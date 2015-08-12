@@ -1,0 +1,56 @@
+LB\CoreBundle\Entity\User:
+  type: entity
+  table: user_login
+  repositoryClass: LB\CoreBundle\Entity\UserRepository
+  fields:
+    id:
+      type: bigint
+      id: true
+      generator:
+        strategy: AUTO
+    name:
+      type: string
+      length: 255
+    username:
+      type: string
+      length: 255
+      unique: true
+    password:
+      type: string
+      length: 255
+    salt:
+      type: string
+      length: 255
+    email:
+      type: string
+      length: 255
+      unique: true
+    isActive:
+      type: boolean
+      column: is_active
+    createdAt:
+      type: datetime
+      column: created_at
+    updatedAt:
+      type: datetime
+      column: updated_at
+    isBillableUser:
+      type: boolean
+      column: is_billable_user
+      nullable: true
+    isDeleted:
+      type: boolean
+      column: is_deleted
+  manyToMany:
+    userRoles:
+      targetEntity: Role
+      joinTable:
+        name: user_role_rel
+        joinColumns:
+          user_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          role_id:
+            referencedColumnName: id
+  lifecycleCallbacks:
+    preUpdate: [ preUpdate ]

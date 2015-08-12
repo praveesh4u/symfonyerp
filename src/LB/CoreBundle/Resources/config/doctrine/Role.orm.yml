@@ -1,0 +1,14 @@
+LB\CoreBundle\Entity\Role:
+  type: entity
+  table: user_role
+  repositoryClass: LB\CoreBundle\Entity\RoleRepository
+  fields:
+    id:
+      type: bigint
+      id: true
+      generator:
+        strategy: AUTO
+    name:
+      type: string
+      length: 255
+  lifecycleCallbacks: {  }

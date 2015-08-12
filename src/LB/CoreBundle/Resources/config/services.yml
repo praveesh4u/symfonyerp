@@ -1,0 +1,4 @@
+services:
+#    lb_core.example:
+#        class: LB\CoreBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

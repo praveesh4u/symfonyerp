@@ -1,0 +1,7 @@
+lb_core:
+    resource: "@LBCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

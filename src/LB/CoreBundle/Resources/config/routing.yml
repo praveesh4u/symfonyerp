@@ -1,0 +1,11 @@
+lb_core_admin_role:
+    resource: "@LBCoreBundle/Resources/config/routing/role.yml"
+    prefix:   /admin/role
+
+lb_core_admin_user:
+    resource: "@LBCoreBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
+lb_core_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: LBCoreBundle:Default:index }
